@@ -18,25 +18,19 @@ public class PracticeFormWithPOTest extends TestBase {
         .setLastName("Taner")
         .setUserEmail("renat@taner.com")
         .setUserGender("Other")
-        .setUserNumber("9876543210");
-//        $("#dateOfBirthInput").click();
-//        $(".react-datepicker__month-select").$(byText("April")).click();
-//        $(".react-datepicker__year-select").$(byText("1900")).click();
-//        $(".react-datepicker__month").$(byText("28")).click();
-        //registrationPage.setBithday("28","April","1900");
+        .setUserNumber("9876543210")
+        .setUserDateOfBirth("28", "April", "1900")
+        .setUserSabjects("Commerce")
+        .setUserHobbies("Reading")
+        .upLoadUserPicture("1223.jpg")
+        .setUserAdress("Baikonur Cosmodrome")
+        .setUserState("Uttar Pradesh")
+        .setUserCity("Lucknow")
+        .clickSubmit()
+                .checkResultTable("Renat Taner", "renat@taner.com", "Other", "9876543210", "28 April,1900",
+                     "Commerce", "Reading", "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow");
 
-//        $("#subjectsInput").setValue("Commerce").pressEnter();
-//        $("#hobbiesWrapper").$(byText("Reading")).click();
-//        $("#uploadPicture").uploadFromClasspath("1223.jpg");
-//        $("#currentAddress").setValue("Baikonur Cosmodrome");
-//        $("#state").click();
-//        $("#state").$(byText("Uttar Pradesh")).click();
-//        $("#city").click();
-//        $("#city").$(byText("Lucknow")).click();
-//        $("#submit").click();
-//
 //        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-//
 //        $(".table-responsive").shouldHave(text("Renat Taner"));
 //        $(".table-responsive").shouldHave(text("renat@taner.com"));
 //        $(".table-responsive").shouldHave(text("Other"));
