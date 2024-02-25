@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CheckResultComponent {
-    public void checkResultTable(String studentName, String studentEmail, String gender, String mobile, String dateOfBirth,
+    public void getResultTable(String studentName, String studentEmail, String gender, String mobile, String dateOfBirth,
                             String subjects, String hobbies, String picture,
                             String address, String stateAndCity) {
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(studentName));
