@@ -3,21 +3,41 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
-    public static SelenideElement firstNameInput = $("#firstName");
-    public static SelenideElement lastNameInput = $("#lastName");
+    private SelenideElement firstNameInput = $("#firstName"),
+    lastNameInput = $("#lastName"),
+    userEmailInput = $("#userEmail"),
+    userNumberInput = $("#userNumber"),
+    userGenderInput = $("#genterWrapper");
 
-    public void openPage(){
+    public RegistrationPage openPage(){
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        return this;
     }
-    public void setFirstName(String value) {
+    public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
-    }public void setLastName(String value) {
+        return this;
+    }
+    public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
+        return this;
+    }
+    public RegistrationPage setUserEmail (String value) {
+        userEmailInput.setValue(value);
+        return this;
+    }
+    public RegistrationPage setUserNumber (String value) {
+        userNumberInput.setValue(value);
+        return this;
+    }
+    public RegistrationPage setUserGender (String value) {
+        userGenderInput.$(byText(value)).click();
+        return this;
     }
 }
