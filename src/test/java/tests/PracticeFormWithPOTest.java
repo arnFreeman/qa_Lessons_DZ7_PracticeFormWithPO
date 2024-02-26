@@ -24,7 +24,7 @@ public class PracticeFormWithPOTest extends TestBase {
         .setUserState("Uttar Pradesh")
         .setUserCity("Lucknow")
         .clickSubmit()
-                .checkResultTable("Renat Taner", "renat@taner.com", "Other", "9876543210", "28 April,1900",
+        .checkResultComponent("Renat Taner", "renat@taner.com", "Other", "9876543210", "28 April,1900",
                      "Commerce", "Reading", "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow");
 
 //        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
