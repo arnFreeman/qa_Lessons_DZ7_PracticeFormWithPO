@@ -26,7 +26,7 @@ public class PracticeFormWithPOTest extends TestBase {
         .clickSubmit()
         .CheckResultComponent("Renat Taner", "renat@taner.com", "Other", "9876543210", "28 April,1900",
                      "Commerce", "Reading", "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow");
-        sleep(2000);
+
     }
     @Test
     void negativeRegistrationTest() {
@@ -47,6 +47,6 @@ public class PracticeFormWithPOTest extends TestBase {
                 .CheckResultNegative();
 //                .CheckResultComponent("Renat Taner", "renat@taner.com", "Other", "9876543210", "28 April,1900",
 //                        "Commerce", "Reading", "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow");
-        sleep(2000);
+
     }
 }

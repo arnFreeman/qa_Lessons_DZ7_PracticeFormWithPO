@@ -1,8 +1,6 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.conditions.CssValue;
 import pages.components.CalendarComponent;
 import pages.components.CheckResultComponent;
 
