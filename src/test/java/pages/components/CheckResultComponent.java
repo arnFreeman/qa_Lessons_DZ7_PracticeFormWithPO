@@ -3,9 +3,7 @@ package pages.components;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-
 public class CheckResultComponent {
-
     public void getResultTable(String studentName, String studentEmail, String gender, String mobile, String dateOfBirth,
                                String subjects, String hobbies, String picture,
                                String address, String stateAndCity) {

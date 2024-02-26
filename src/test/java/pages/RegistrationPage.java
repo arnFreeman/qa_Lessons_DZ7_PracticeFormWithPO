@@ -24,10 +24,8 @@ public class RegistrationPage {
             clickButtonSubmit = $("#submit"),
             checkError = $("#app"),
             checkOneResult = $(".table-responsive");
-
     CalendarComponent calendarComponent = new CalendarComponent();
     CheckResultComponent checkResultComponent = new CheckResultComponent();
-
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
@@ -35,71 +33,57 @@ public class RegistrationPage {
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         return this;
     }
-
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
     }
-
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
         return this;
     }
-
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
         return this;
     }
-
     public RegistrationPage setUserNumber(String value) {
         userNumberInput.setValue(value);
         return this;
     }
-
     public RegistrationPage setUserGender(String value) {
         userGenderInput.$(byText(value)).click();
         return this;
     }
-
     public RegistrationPage setUserDateOfBirth(String day, String month, String year) {
         userDateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
         return this;
     }
-
     public RegistrationPage setUserSabjects(String value) {
         userSubjectsInput.setValue(value).pressEnter();
         return this;
     }
-
     public RegistrationPage setUserHobbies(String value) {
         userHobbiesInput.$(byText(value)).click();
         return this;
     }
-
     public RegistrationPage upLoadUserPicture(String value) {
         upLoadUserPicture.uploadFromClasspath(value);
-
         return this;
     }
-
     public RegistrationPage setUserAdress(String value) {
         userAdressInput.setValue(value).pressEnter();
         return this;
     }
-
     public RegistrationPage setUserState(String value) {
         userStateInput.click();
         userStateInput.$(byText(value)).click();
         return this;
     }
-
     public RegistrationPage setUserCity(String value) {
         userCityInput.click();
         userCityInput.$(byText(value)).click();
         return this;
     }
-
     public RegistrationPage clickSubmit() {
         clickButtonSubmit.click();
         return this;
