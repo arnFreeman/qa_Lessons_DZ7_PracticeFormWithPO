@@ -1,6 +1,8 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.conditions.CssValue;
 import pages.components.CalendarComponent;
 import pages.components.CheckResultComponent;
 
@@ -22,7 +24,8 @@ public class RegistrationPage {
             userStateInput = $("#state"),
             userCityInput = $("#city"),
             clickButtonSubmit = $("#submit"),
-            checkResultTable = $(".table-responsive");
+            checkError = $("#app");
+
 
     CalendarComponent calendarComponent = new CalendarComponent();
     CheckResultComponent checkResultComponent = new CheckResultComponent();
@@ -77,8 +80,8 @@ public class RegistrationPage {
     }
 
     public RegistrationPage upLoadUserPicture(String value) {
-        upLoadUserPicture.uploadFromClasspath("1223.jpg");
-        ;
+        upLoadUserPicture.uploadFromClasspath(value);
+
         return this;
     }
 
@@ -103,12 +106,16 @@ public class RegistrationPage {
         clickButtonSubmit.click();
         return this;
     }
-
-    public RegistrationPage CheckResultComponent(String studentName, String studentEmail, String gender, String mobile,
-                                                 String dateOfBirth, String subjects, String hobbies, String picture,
-                                                 String address, String stateAndCity) {
-        checkResultTable.getResultTable(studentName, studentEmail, gender, mobile, dateOfBirth, subjects,
-                                              hobbies, picture, address, stateAndCity);
+    public RegistrationPage CheckResultNegative() {
+        checkError.shouldNotHave((text("Thanks for submitting the form")));
         return this;
+    }
+
+    public void CheckResultComponent(String studentName, String studentEmail, String gender, String mobile,
+                                     String dateOfBirth, String subjects, String hobbies, String picture,
+                                     String address, String stateAndCity) {
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        checkResultComponent.getResultTable(studentName, studentEmail, gender, mobile, dateOfBirth, subjects,
+                                            hobbies, picture, address, stateAndCity);
     }
 }
