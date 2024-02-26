@@ -22,8 +22,8 @@ public class RegistrationPage {
             userStateInput = $("#state"),
             userCityInput = $("#city"),
             clickButtonSubmit = $("#submit"),
-            checkError = $("#app");
-
+            checkError = $("#app"),
+            checkOneResult = $(".table-responsive");
 
     CalendarComponent calendarComponent = new CalendarComponent();
     CheckResultComponent checkResultComponent = new CheckResultComponent();
@@ -108,7 +108,10 @@ public class RegistrationPage {
         checkError.shouldNotHave((text("Thanks for submitting the form")));
         return this;
     }
-
+    public RegistrationPage checkOneResult(String key, String value) {
+        checkOneResult.$(byText(key)).parent().shouldHave(text(value));
+        return this;
+    }
     public void CheckResultComponent(String studentName, String studentEmail, String gender, String mobile,
                                      String dateOfBirth, String subjects, String hobbies, String picture,
                                      String address, String stateAndCity) {
