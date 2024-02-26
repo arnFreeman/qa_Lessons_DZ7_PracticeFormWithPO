@@ -107,7 +107,7 @@ public class RegistrationPage {
     public RegistrationPage CheckResultComponent(String studentName, String studentEmail, String gender, String mobile,
                                                  String dateOfBirth, String subjects, String hobbies, String picture,
                                                  String address, String stateAndCity) {
-        checkResultComponent.getResultTable(studentName, studentEmail, gender, mobile, dateOfBirth, subjects,
+        checkResultTable.getResultTable(studentName, studentEmail, gender, mobile, dateOfBirth, subjects,
                                               hobbies, picture, address, stateAndCity);
         return this;
     }
