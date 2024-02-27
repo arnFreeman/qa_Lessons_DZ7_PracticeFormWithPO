@@ -58,7 +58,7 @@ public class RegistrationPage {
         calendarComponent.setDate(day, month, year);
         return this;
     }
-    public RegistrationPage setUserSabjects(String value) {
+    public RegistrationPage setUserSubjects(String value) {
         userSubjectsInput.setValue(value).pressEnter();
         return this;
     }
@@ -88,7 +88,7 @@ public class RegistrationPage {
         clickButtonSubmit.click();
         return this;
     }
-    public RegistrationPage CheckResultNegative() {
+    public RegistrationPage checkResultNegative() {
         checkError.shouldNotHave((text("Thanks for submitting the form")));
         return this;
     }
@@ -96,7 +96,7 @@ public class RegistrationPage {
         checkOneResult.$(byText(key)).parent().shouldHave(text(value));
         return this;
     }
-    public void CheckResultComponent(String studentName, String studentEmail, String gender, String mobile,
+    public void checkResultComponent(String studentName, String studentEmail, String gender, String mobile,
                                      String dateOfBirth, String subjects, String hobbies, String picture,
                                      String address, String stateAndCity) {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));

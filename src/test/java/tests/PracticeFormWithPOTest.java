@@ -14,14 +14,14 @@ public class PracticeFormWithPOTest extends TestBase {
         .setUserGender("Other")
         .setUserNumber("9876543210")
         .setUserDateOfBirth("28", "April", "1900")
-        .setUserSabjects("Commerce")
+        .setUserSubjects("Commerce")
         .setUserHobbies("Reading")
         .upLoadUserPicture("1223.jpg")
         .setUserAdress("Baikonur Cosmodrome")
         .setUserState("Uttar Pradesh")
         .setUserCity("Lucknow")
         .clickSubmit()
-        .CheckResultComponent("Renat Taner", "renat@taner.com", "Other",
+        .checkResultComponent("Renat Taner", "renat@taner.com", "Other",
                               "9876543210", "28 April,1900", "Commerce", "Reading",
                               "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow");
     }
@@ -33,14 +33,14 @@ public class PracticeFormWithPOTest extends TestBase {
                 .setUserGender("Other")
                 .setUserNumber("9876543210")
                 .setUserDateOfBirth("28", "April", "1900")
-                .setUserSabjects("Commerce")
+                .setUserSubjects("Commerce")
                 .setUserHobbies("Reading")
                 .upLoadUserPicture("1223.jpg")
                 .setUserAdress("Baikonur Cosmodrome")
                 .setUserState("Uttar Pradesh")
                 .setUserCity("Lucknow")
                 .clickSubmit()
-                .CheckResultNegative();
+                .checkResultNegative();
     }
     @Test
     void requiredFieldsRegistrationTest() {
