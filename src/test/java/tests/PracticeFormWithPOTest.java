@@ -1,5 +1,7 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -7,6 +9,7 @@ public class PracticeFormWithPOTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     @Test
     void positiveRegistrationTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
         .setFirstName("Renat")
         .setLastName("Taner")
@@ -27,6 +30,7 @@ public class PracticeFormWithPOTest extends TestBase {
     }
     @Test
     void negativeRegistrationTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
                 .setLastName("Taner")
                 .setUserEmail("renat@taner.com")
@@ -44,10 +48,11 @@ public class PracticeFormWithPOTest extends TestBase {
     }
     @Test
     void requiredFieldsRegistrationTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
                 .setFirstName("Renat")
                 .setLastName("Taner")
-                .setUserGender("Other")
+                .setUserGender("")
                 .setUserNumber("9876543210")
                 .setUserDateOfBirth("28", "April", "1900")
                 .clickSubmit()
