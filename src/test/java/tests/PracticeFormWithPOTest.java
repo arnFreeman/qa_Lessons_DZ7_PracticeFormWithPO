@@ -12,7 +12,7 @@ import static io.qameta.allure.Allure.step;
 public class PracticeFormWithPOTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     @Test
-    @Tag("demoqa")
+    @Tag("qaLessons")
     @DisplayName("Тест для Practice Form с заполнением всех полей")
     //@Tag("qaLessons")
     void positiveRegistrationTest() {
@@ -43,7 +43,7 @@ public class PracticeFormWithPOTest extends TestBase {
                     "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow"));
     }
     @Test
-    @Tag("demoqa")
+    @Tag("qaLessons")
     @DisplayName("Негативный тест для Practice Form с заполнением не всех полей")
    // @Tag("qaLessons")
     void negativeRegistrationTest() {
@@ -72,7 +72,7 @@ public class PracticeFormWithPOTest extends TestBase {
         });
     }
     @Test
-    @Tag("demoqa")
+    @Tag("qaLessons")
     @DisplayName("Тест для Practice Form с заполнением обязательных полей")
     //@Tag("qaLessons")
     void requiredFieldsRegistrationTest() {
