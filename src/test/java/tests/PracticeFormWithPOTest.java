@@ -14,7 +14,6 @@ public class PracticeFormWithPOTest extends TestBase {
     @Test
     @Tag("qaLessons")
     @DisplayName("Тест для Practice Form с заполнением всех полей")
-    //@Tag("qaLessons")
     void positiveRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Allure.step("Открыть страницу Practice Form", () -> {
@@ -45,8 +44,8 @@ public class PracticeFormWithPOTest extends TestBase {
     @Test
     @Tag("qaLessons")
     @DisplayName("Негативный тест для Practice Form с заполнением не всех полей")
-   // @Tag("qaLessons")
-    void negativeRegistrationTest() {
+
+   void negativeRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Allure.step("Открыть страницу Practice Form", () -> {
             registrationPage.openPage();
@@ -74,7 +73,7 @@ public class PracticeFormWithPOTest extends TestBase {
     @Test
     @Tag("qaLessons")
     @DisplayName("Тест для Practice Form с заполнением обязательных полей")
-    //@Tag("qaLessons")
+
     void requiredFieldsRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Allure.step("Открыть страницу Practice Form", () -> {
