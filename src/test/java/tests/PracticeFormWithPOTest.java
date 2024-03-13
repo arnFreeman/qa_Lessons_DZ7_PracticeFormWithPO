@@ -4,14 +4,16 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Allure;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import static io.qameta.allure.Allure.step;
-
+@Tag("qaLessons")
 public class PracticeFormWithPOTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     @Test
     @DisplayName("Тест для Practice Form с заполнением всех полей")
+    //@Tag("qaLessons")
     void positiveRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Allure.step("Открыть страницу Practice Form", () -> {
@@ -34,14 +36,14 @@ public class PracticeFormWithPOTest extends TestBase {
         step("Отправить данные для проверки нажав Submit", () -> {
             registrationPage.clickSubmit();
         });
-        step("Проверить данные на соответствие в форме Thanks for submitting the form", () -> {
+        step("Проверить данные на соответствие в форме Thanks for submitting the form", () ->
             registrationPage.checkResultComponent("Renat Taner", "renat@taner.com", "Other",
                     "9876543210", "28 April,1900", "Commerce", "Reading",
-                    "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow");
-        });
+                    "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow"));
     }
     @Test
     @DisplayName("Негативный тест для Practice Form с заполнением не всех полей")
+   // @Tag("qaLessons")
     void negativeRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Allure.step("Открыть страницу Practice Form", () -> {
@@ -69,6 +71,7 @@ public class PracticeFormWithPOTest extends TestBase {
     }
     @Test
     @DisplayName("Тест для Practice Form с заполнением обязательных полей")
+    //@Tag("qaLessons")
     void requiredFieldsRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Allure.step("Открыть страницу Practice Form", () -> {
