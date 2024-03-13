@@ -8,11 +8,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import static io.qameta.allure.Allure.step;
-
+@Tag("simple")
 public class PracticeFormWithPOTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     @Test
-    @Tag("qaLessons")
     @DisplayName("Тест для Practice Form с заполнением всех полей")
     void positiveRegistrationTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -42,7 +41,6 @@ public class PracticeFormWithPOTest extends TestBase {
                     "1223.jpg", "Baikonur Cosmodrome","Uttar Pradesh Lucknow"));
     }
     @Test
-    @Tag("qaLessons")
     @DisplayName("Негативный тест для Practice Form с заполнением не всех полей")
 
    void negativeRegistrationTest() {
@@ -71,7 +69,6 @@ public class PracticeFormWithPOTest extends TestBase {
         });
     }
     @Test
-    @Tag("qaLessons")
     @DisplayName("Тест для Practice Form с заполнением обязательных полей")
 
     void requiredFieldsRegistrationTest() {

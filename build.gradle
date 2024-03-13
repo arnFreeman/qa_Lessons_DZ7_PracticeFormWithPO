@@ -44,8 +44,8 @@ tasks.withType(Test) {
         }
     }
 }
-task qaLessons_test(type: Test) {
+task simple_test(type: Test) {
     useJUnitPlatform {
-        includeTags("qaLessons")
+        includeTags("simple")
     }
 }
