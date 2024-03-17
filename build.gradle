@@ -34,7 +34,7 @@ dependencies {
             "org.slf4j:slf4j-simple:1.7.36",
             "io.qameta.allure:allure-selenide:2.25.0")
 }
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
 
     testLogging {
@@ -44,7 +44,7 @@ tasks.withType(Test) {
         }
     }
 }
-task dz13_test(type: Test) {
+tasks.register('dz13_test', Test) {
     useJUnitPlatform {
         includeTags("dz13")
     }
