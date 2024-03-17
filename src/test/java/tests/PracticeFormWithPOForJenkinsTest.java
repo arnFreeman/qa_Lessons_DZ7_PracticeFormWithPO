@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import static io.qameta.allure.Allure.step;
 
-@Tag("dz13")
+
 public class PracticeFormWithPOForJenkinsTest {
 
     @BeforeAll
@@ -24,6 +24,7 @@ public class PracticeFormWithPOForJenkinsTest {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @Tag("dz13")
     @Test
     @DisplayName("Тест для Practice Form с заполнением всех полей")
     void positiveRegistrationTest() {
@@ -54,6 +55,7 @@ public class PracticeFormWithPOForJenkinsTest {
                         "1.JPG", "Baikonur Cosmodrome", "Uttar Pradesh Lucknow"));
     }
 
+    @Tag("dz13")
     @Test
     @DisplayName("Негативный тест для Practice Form с заполнением не всех полей")
     void negativeRegistrationTest() {
@@ -82,6 +84,7 @@ public class PracticeFormWithPOForJenkinsTest {
         });
     }
 
+    @Tag("dz13")
     @Test
     @DisplayName("Тест для Practice Form с заполнением обязательных полей")
     void requiredFieldsRegistrationTest() {
