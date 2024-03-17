@@ -19,6 +19,7 @@ public class PracticeFormWithPOForJenkinsTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -39,7 +40,7 @@ public class PracticeFormWithPOForJenkinsTest {
                     .setUserDateOfBirth("28", "April", "1900")
                     .setUserSubjects("Commerce")
                     .setUserHobbies("Reading")
-                    .upLoadUserPicture("1223.jpg")
+                    .upLoadUserPicture("1.JPG")
                     .setUserAdress("Baikonur Cosmodrome")
                     .setUserState("Uttar Pradesh")
                     .setUserCity("Lucknow");
@@ -50,7 +51,7 @@ public class PracticeFormWithPOForJenkinsTest {
         step("Проверить данные на соответствие в форме Thanks for submitting the form", () ->
                 registrationPage.checkResultComponent("Renat Taner", "renat@taner.com", "Other",
                         "9876543210", "28 April,1900", "Commerce", "Reading",
-                        "1223.jpg", "Baikonur Cosmodrome", "Uttar Pradesh Lucknow"));
+                        "1.JPG", "Baikonur Cosmodrome", "Uttar Pradesh Lucknow"));
     }
 
     @Test
@@ -68,7 +69,7 @@ public class PracticeFormWithPOForJenkinsTest {
                     .setUserDateOfBirth("28", "April", "1900")
                     .setUserSubjects("Commerce")
                     .setUserHobbies("Reading")
-                    .upLoadUserPicture("1223.jpg")
+                    .upLoadUserPicture("1.JPG")
                     .setUserAdress("Baikonur Cosmodrome")
                     .setUserState("Uttar Pradesh")
                     .setUserCity("Lucknow");
