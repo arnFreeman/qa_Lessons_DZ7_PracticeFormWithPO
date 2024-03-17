@@ -44,8 +44,8 @@ tasks.withType(Test) {
         }
     }
 }
-task simple_test(type: Test) {
+task dz13_test(type: Test) {
     useJUnitPlatform {
-        includeTags("simple")
+        includeTags("dz13")
     }
 }
